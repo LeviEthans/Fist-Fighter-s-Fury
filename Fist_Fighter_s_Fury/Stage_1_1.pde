@@ -1,3 +1,2 @@
-if (Scene == 4){
-  
+if (Scene == 4) {
 }
