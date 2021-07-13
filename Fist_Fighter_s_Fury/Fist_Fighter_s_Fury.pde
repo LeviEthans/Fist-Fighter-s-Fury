@@ -1,5 +1,5 @@
 int Scene;
-PImage Player;
+PImage Player, bkg;
 float px, py;
 float bx, by;
 void setup(){
@@ -9,9 +9,7 @@ void setup(){
 }
 
 void draw (){
-  background(255, 255, 255);
-  fill (0);
-  ellipse (px, py, 50, 50);
+
 }
 
 void keyPressed(){
