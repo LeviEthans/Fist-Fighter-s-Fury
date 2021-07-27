@@ -82,7 +82,7 @@ void draw () {
     text("Press SPACE to Continue!", width/2, height/2);
   }
   if (Scene == 1) {
-    if (mouseX >= width/4 - 80 && mouseX <= width/4 + 80 && mouseY >= height/2 - 80 && mouseY <= height/2 + 80) {
+    if (mouseX >= width/4 - 100 && mouseX <= width/4 + 100 && mouseY >= height/2 - 100 && mouseY <= height/2 + 100) {
       r = 255;
       g = 255;
       b = 255;
