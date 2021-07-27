@@ -63,7 +63,7 @@ void setup() {
   train[53] = loadImage("frame_53.gif");
   train[54] = loadImage("frame_54.gif");
   train[55] = loadImage("frame_55.gif");
-  train[56] = loadImage("frame_56.gif");
+  frameRate(8);
   px = width/2;
   py = height/2;
   Scene = 0;
@@ -104,9 +104,11 @@ void draw () {
     fill(r, g, b);
     rect(width/4, height/2, 200, 200);
     fill(r2, g2, b2);
+    rect(width/2, height/2, 200, 200);
     imageMode(CENTER);
     bkg.resize(175, 175);
     image(bkg, width/4, height/2);
+    image(train[frameCount%8], width/2, height/2);
     fill(textR, textG, textB);
     textSize(50);
     text("Stage 1-1", width/4, height/2 + 100);
