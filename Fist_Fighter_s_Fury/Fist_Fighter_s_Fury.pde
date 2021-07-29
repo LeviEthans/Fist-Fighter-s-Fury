@@ -3,7 +3,7 @@ PImage Player, bkg, menuBKG;
 PImage [] train = new PImage [56];
 float px, py;
 float r, g, b, r2, g2, b2;
-float textR, textG, textB;
+float textR, textG, textB, textB2, textR2, textG2;
 void setup() {
   fullScreen();
   smooth();
@@ -97,6 +97,21 @@ void draw () {
       textG = 0;
       textB = 0;
     }
+    if (mouseX >= width/2 - 100 && mouseX <= width/2 + 100 && mouseY >= height/2 - 100 && mouseY <= height/2 + 100) {
+      r2 = 255;
+      g2 = 255;
+      b2 = 255;
+      textR2 = 255;
+      textG2 = 255;
+      textB2 = 0;
+    }else{
+      r2 = 0;
+      g2 = 0;
+      b2 = 0;
+      textR2 = 0;
+      textG2 = 0;
+      textB2 = 0;
+    }
     background(0);
     fill(255, 255, 0);
     textSize(100);
@@ -109,10 +124,13 @@ void draw () {
     imageMode(CENTER);
     bkg.resize(175, 175);
     image(bkg, width/4, height/2);
+    train[frameCount%56].resize(175, 175);
     image(train[frameCount%56], width/2, height/2);
     fill(textR, textG, textB);
     textSize(50);
     text("Stage 1-1", width/4, height/2 + 100);
+    fill(textR2, textG2, textB2);
+    text("Stage 1-2", width/2, height/2 + 100);
   }
 }
 
