@@ -79,7 +79,7 @@ void draw () {
     textSize(100);
     fill(200, 0, 255);
     text("Fist Fighter's Fury", width/2, height/4);
-    text("Press SPACE to Continue!", width/2, height/2);
+    text("Press the screen to Continue!", width/2, height/2);
   }
   if (Scene == 1) {
     if (mouseX >= width/4 - 100 && mouseX <= width/4 + 100 && mouseY >= height/2 - 100 && mouseY <= height/2 + 100) {
@@ -134,20 +134,8 @@ void draw () {
   }
 }
 
-void keyPressed() {
-  if (key == 'w') {
-    py -= 5;
-  }
-  if (key == 's') {
-    py += 5;
-  }
-  if (key == 'd') {
-    px += 5;
-  }
-  if (key == 'a') {
-    px -= 5;
-  }
-  if (key == ' ' && Scene == 0) {
-    Scene = 1;
-  }
+void mouseClicked() {
+if(mouseX <= width && mouseY <= height && Scene == 0){
+  Scene = 1;
+}
 }
