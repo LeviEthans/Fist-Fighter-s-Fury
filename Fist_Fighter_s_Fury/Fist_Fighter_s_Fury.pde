@@ -4,6 +4,7 @@ PImage [] train = new PImage [56];
 float px, py;
 float r, g, b, r2, g2, b2;
 float textR, textG, textB, textB2, textR2, textG2;
+Stage1_2 z;
 void setup() {
   fullScreen();
   smooth();
@@ -69,9 +70,11 @@ void setup() {
   Scene = 0;
   menuBKG = loadImage("Menu.jpg");
   bkg = loadImage("cyberpunk-street.png");
+  z = new Stage1_2();
 }
 
 void draw () {
+  z.ScreenChange();
   if (Scene == 0) {
     menuBKG.resize(width, height);
     background(menuBKG);
