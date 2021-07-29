@@ -104,7 +104,7 @@ void draw () {
       textR2 = 255;
       textG2 = 255;
       textB2 = 0;
-    }else{
+    } else {
       r2 = 0;
       g2 = 0;
       b2 = 0;
@@ -135,7 +135,13 @@ void draw () {
 }
 
 void mouseClicked() {
-if(mouseX <= width && mouseY <= height && Scene == 0){
-  Scene = 1;
-}
+  if (mouseX <= width && mouseY <= height && Scene == 0) {
+    Scene = 1;
+  }
+  if (mouseX >= width/4 - 100 && mouseX <= width/4 + 100 && mouseY >= height/2 - 100 && mouseY <= height/2 + 100 && Scene == 1) {
+    Scene = 3;
+  }
+  if (mouseX >= width/2 - 100 && mouseX <= width/2 + 100 && mouseY >= height/2 - 100 && mouseY <= height/2 + 100) {
+    Scene = 4;
+  }
 }
