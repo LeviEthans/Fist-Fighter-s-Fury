@@ -3,10 +3,11 @@ PImage Player, bkg, menuBKG;
 PImage [] train = new PImage [56];
 PImage [] cliff = new PImage [10];
 float px, py;
-float r, g, b, r2, g2, b2;
-float textR, textG, textB, textB2, textR2, textG2;
+float r, g, b, r2, g2, b2, r3, g3, b3;
+float textR, textG, textB, textB2, textR2, textG2, textR3, textG3, textB3;
 Stage1_2 z;
 Stage1_1 t;
+Stage1_3 p;
 void setup() {
   fullScreen();
   smooth();
@@ -67,6 +68,16 @@ void setup() {
   train[54] = loadImage("data/Stage1-2/frame_54.gif");
   train[55] = loadImage("data/Stage1-2/frame_55.gif");
   frameRate(8);
+  cliff[0] = loadImage("data/Cliff/CliffFrame_00.gif");
+  cliff[1] = loadImage("data/Cliff/CliffFrame_01.gif");
+  cliff[2] = loadImage("data/Cliff/CliffFrame_02.gif");
+  cliff[3] = loadImage("data/Cliff/CliffFrame_03.gif");
+  cliff[4] = loadImage("data/Cliff/CliffFrame_04.gif");
+  cliff[5] = loadImage("data/Cliff/CliffFrame_05.gif");
+  cliff[6] = loadImage("data/Cliff/CliffFrame_06.gif");
+  cliff[7] = loadImage("data/Cliff/CliffFrame_07.gif");
+  cliff[8] = loadImage("data/Cliff/CliffFrame_08.gif");
+  cliff[9] = loadImage("data/Cliff/CliffFrame_09.gif");
   px = width/2;
   py = height/2;
   Scene = 0;
@@ -74,9 +85,11 @@ void setup() {
   bkg = loadImage("cyberpunk-street.png");
   z = new Stage1_2();
   t = new Stage1_1();
+  p = new Stage1_3();
 }
 
 void draw () {
+  p.FinalScreen();
   t.otherScreen();
   z.ScreenChange();
   if (Scene == 0) {
@@ -119,6 +132,21 @@ void draw () {
       textG2 = 0;
       textB2 = 0;
     }
+    if (mouseX >= width * 3/4 - 100 && mouseX <= width * 3/4 + 100 && mouseY >= height/2 - 100 && mouseY <= height/2 + 100) {
+     r3 = 255;
+     g3 = 255;
+     b3 = 255;
+     textR3 = 255;
+     textG3 = 255;
+     textB3 = 0;
+    } else {
+      r3 = 0;
+      g3 = 0;
+      b3 = 0;
+      textR3 = 0;
+      textG3 = 0;
+      textB3 = 0;
+    }
     background(0);
     fill(255, 255, 0);
     textSize(100);
@@ -128,16 +156,22 @@ void draw () {
     rect(width/4, height/2, 200, 200);
     fill(r2, g2, b2);
     rect(width/2, height/2, 200, 200);
+    fill(r3, g3, b3);
+    rect(width * 3/4, height/2, 200, 200);
     imageMode(CENTER);
     bkg.resize(175, 175);
     image(bkg, width/4, height/2);
     train[frameCount%56].resize(175, 175);
     image(train[frameCount%56], width/2, height/2);
+    cliff[frameCount%10].resize(175, 175);
+    image(cliff[frameCount%10], width * 3/4, height/2);
     fill(textR, textG, textB);
     textSize(50);
     text("Stage 1-1", width/4, height/2 + 100);
     fill(textR2, textG2, textB2);
     text("Stage 1-2", width/2, height/2 + 100);
+    fill(textR3, textG3, textB3);
+    text("Stage 1-3", width * 3/4, height/2 + 100);
   }
 }
 
@@ -148,7 +182,10 @@ void mouseClicked() {
   if (mouseX >= width/4 - 100 && mouseX <= width/4 + 100 && mouseY >= height/2 - 100 && mouseY <= height/2 + 100 && Scene == 1) {
     Scene = 3;
   }
-  if (mouseX >= width/2 - 100 && mouseX <= width/2 + 100 && mouseY >= height/2 - 100 && mouseY <= height/2 + 100) {
+  if (mouseX >= width/2 - 100 && mouseX <= width/2 + 100 && mouseY >= height/2 - 100 && mouseY <= height/2 + 100 && Scene == 1) {
     Scene = 4;
+  }
+  if (mouseX >= width * 3/4 - 100 && mouseX <= width * 3/4 + 100 && mouseY >= height/2 - 100 && mouseY <= height/2 + 100 && Scene == 1) {
+    Scene = 5;
   }
 }
