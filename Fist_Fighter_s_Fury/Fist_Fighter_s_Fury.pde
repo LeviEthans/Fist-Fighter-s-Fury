@@ -1,10 +1,12 @@
 int Scene;
 PImage Player, bkg, menuBKG;
 PImage [] train = new PImage [56];
+PImage [] cliff = new PImage [10];
 float px, py;
 float r, g, b, r2, g2, b2;
 float textR, textG, textB, textB2, textR2, textG2;
 Stage1_2 z;
+Stage1_1 t;
 void setup() {
   fullScreen();
   smooth();
@@ -71,9 +73,11 @@ void setup() {
   menuBKG = loadImage("Menu.jpg");
   bkg = loadImage("cyberpunk-street.png");
   z = new Stage1_2();
+  t = new Stage1_1();
 }
 
 void draw () {
+  t.otherScreen();
   z.ScreenChange();
   if (Scene == 0) {
     menuBKG.resize(width, height);
