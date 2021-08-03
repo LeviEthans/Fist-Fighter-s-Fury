@@ -9,7 +9,7 @@ Stage1_2 z;
 Stage1_1 t;
 Stage1_3 p;
 void setup() {
-  fullScreen();
+  fullScreen(P2D);
   smooth();
   train[0] = loadImage("data/Stage1-2/frame_00.gif");
   train[1] = loadImage("data/Stage1-2/frame_01.gif");
