@@ -5,7 +5,6 @@ class Stage1_3 {
     if (Scene == 5) {
       cliff[frameCount%10].resize(width, height);
       background(cliff[frameCount%10]);
-      frameRate(5);
     }
   }
 

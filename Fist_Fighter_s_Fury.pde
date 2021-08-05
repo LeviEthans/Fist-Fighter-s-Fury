@@ -1,5 +1,5 @@
 int Scene;
-PImage Player, bkg, menuBKG, LeftArrow, RightArrow;
+PImage Player, bkg, menuBKG, LeftArrow, RightArrow, Back;
 PImage [] train = new PImage [56];
 PImage [] cliff = new PImage [10];
 float px, py;
@@ -68,7 +68,7 @@ void setup() {
   train[53] = loadImage("data/Stage1-2/frame_53.gif");
   train[54] = loadImage("data/Stage1-2/frame_54.gif");
   train[55] = loadImage("data/Stage1-2/frame_55.gif");
-  frameRate(8);
+  frameRate(5);
   cliff[0] = loadImage("data/Cliff/CliffFrame_00.gif");
   cliff[1] = loadImage("data/Cliff/CliffFrame_01.gif");
   cliff[2] = loadImage("data/Cliff/CliffFrame_02.gif");
@@ -86,6 +86,7 @@ void setup() {
   bkg = loadImage("cyberpunk-street.png");
   LeftArrow = loadImage("LeftArrow.png");
   RightArrow = loadImage("RightArrow.png");
+  Back = loadImage("BackButton.png");
   z = new Stage1_2();
   t = new Stage1_1();
   p = new Stage1_3();
