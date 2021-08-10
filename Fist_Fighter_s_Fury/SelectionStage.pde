@@ -1,5 +1,6 @@
 class SelectScreen {
   Button back, left, right, start;
+  
   SelectScreen() {
     back = new Button("BackButton.png", width * 5/6, 100, 300, 200);
     left = new Button("LeftArrow.png", width/3, height/2, 200, 200);
@@ -37,9 +38,9 @@ class SelectScreen {
   }
 
   void mouseClicked() {
-    if(mouseX >= back.location.x && mouseX <= back.location.x + back.size.x &&
-    mouseY >= back.location.y && mouseY <= back.location.y + back.size.y &&
-    Scene == 2 || Scene == 6 || Scene == 7){
+    if (mouseX >= back.location.x && mouseX <= back.location.x + back.size.x &&
+      mouseY >= back.location.y && mouseY <= back.location.y + back.size.y &&
+      Scene == 2 || Scene == 6 || Scene == 7) {
       Scene = 1;
     }
   }
